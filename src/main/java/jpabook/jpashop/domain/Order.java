@@ -18,6 +18,10 @@ public class Order {
     @JoinColumn(name = "member_id") // 외래 키 이름
     private Member member;
 
+    @OneToOne
+    @JoinColumn(name = "delivery_id")
+    private Delivery delivery;
+
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
 
